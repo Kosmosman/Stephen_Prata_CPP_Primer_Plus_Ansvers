@@ -9,7 +9,7 @@ int main() {
   int count_vovel = 0, count_consonant = 0, count_other = 0;
   while (cin >> word && word != "q") {
     if (isalpha(word[0])) {
-      if (word.find_first_of(vovel, 0))
+      if (strchr(vovel, word[0]))
         ++count_vovel;
       else
         ++count_consonant;
