@@ -11,8 +11,10 @@ int main() {
   cout << "Enter fileanme: ";
   cin.getline(filename, Size);
   file.open(filename);
-  while ((ch = file.get()) != EOF) ++count;
-  cout << "Number of symbol - " << count - 1 << endl;
-  if (file) file.close();
+  if (file.is_open()) {
+    while ((ch = file.get()) != EOF) ++count;
+    cout << "Number of symbol - " << count - 1 << endl;
+    file.close();
+  }
   return 0;
 }

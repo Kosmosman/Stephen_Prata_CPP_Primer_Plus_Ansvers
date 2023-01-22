@@ -16,7 +16,7 @@ int main() {
   cout << "Enter the number of mecenatas: ";
   (cin >> count).get();
   mecenat* mecenates_list = new mecenat[count];
-  int* top_mecenates = new int[count]{-1};
+  int* top_mecenates = new int[count * 2]{-1};
   if (mecenates_list && top_mecenates) {
     for (int i = 0; i < count && !error; ++i) {
       cout << "Enter the mecenat's name: ";
@@ -37,11 +37,11 @@ int main() {
     }
     if (top_mecenates[0] >= 0 && top_mecenates[1] >= 0) {
       cout << "Grand Patrons\n";
-      for (int i = 0; i <= num_top_mecenates; i += 2) {
+      for (int i = 0; i < count; i += 2) {
         cout << mecenates_list[top_mecenates[i]].name << endl;
       }
       cout << "\nPatrons\n";
-      for (int i = 1; i <= count - num_top_mecenates; i += 2) {
+      for (int i = 1; i < count; i += 2) {
         cout << mecenates_list[top_mecenates[i]].name << endl;
       }
     } else {
